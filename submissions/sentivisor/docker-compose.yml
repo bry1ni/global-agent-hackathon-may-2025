@@ -1,0 +1,21 @@
+services:
+  fastapi-app:
+    build: .
+    container_name: agent-app-container
+    ports:
+      - "5001:5001"
+    env_file:
+      - .env
+    environment:
+      - PYTHONUNBUFFERED=1
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app
+          ignore:
+            - .venv/
+            - __pycache__/
+            - "*.pyc"
+        - action: rebuild
+          path: ./uv.lock
