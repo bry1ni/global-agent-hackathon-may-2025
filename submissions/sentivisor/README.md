@@ -1,14 +1,26 @@
-# Agent App
+# Sentivisor
 
-A high-performance, scalable framework for implementing and deploying AI agents. Built with simplicity and speed in mind, this project provides a robust foundation for creating and managing AI agents in production environments.
+An intelligent emotional analysis agent that provides real-time insights into participant emotions during video conference calls. Built on the Agno framework, Sentivisor helps managers understand team dynamics and identify potential concerns through advanced AI-powered emotion detection.
 
-## 🚀 Features
+## 🎯 Features
 
-- Fast and efficient agent implementation
-- Scalable architecture design
-- RESTful API interface
-- Docker support for easy deployment
-- Modular and extensible design
+- **Real-time Emotion Analysis**
+  - Facial expression analysis using DeepFace
+  - Voice tone and stress detection
+  - Text sentiment analysis from speech transcripts
+  - Multi-modal emotional state tracking
+
+- **Meeting Insights**
+  - Live emotional state monitoring
+  - Engagement level tracking
+  - Risk indicator detection
+  - Post-meeting emotional reports
+
+- **Privacy-Focused**
+  - Secure data handling
+  - Configurable privacy settings
+  - Private manager alerts
+  - No raw data storage
 
 ## 📦 Installation
 
@@ -16,16 +28,17 @@ A high-performance, scalable framework for implementing and deploying AI agents.
 - Python 3.8+
 - Docker (optional, for containerized deployment)
 - pip or uv package manager (uv is recommended)
+- CUDA-capable GPU (recommended for real-time analysis)
 
 ### Quick Start
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/agent-app.git
-cd agent-app
+git clone https://github.com/yourusername/sentivisor.git
+cd sentivisor
 ```
 
-2. Create a virtual environment and install dependencies (uv is recommended):
+2. Create a virtual environment and install dependencies:
 ```bash
 uv sync
 ```
@@ -36,45 +49,21 @@ OPENAI_API_KEY=your_openai_api_key
 AGNO_API_KEY=your_agno_api_key
 ```
 
-4. Start the application (Optional, for local testing):
+4. Start the application:
 ```bash
 uvicorn app:app --reload
 ```
 
-5. Open Agno Playground (UI):
+5. Open Agno Playground:
 - Ensure your AGNO_API_KEY is set in the `.env` file
 - Run main.py to start the Playground
-- Visit https://app.agno.com/playground/agents to see the Playground
+- Visit https://app.agno.com/playground/agents
 - Select localhost:7777 as the endpoint
 
 ### Docker Deployment
 ```bash
 docker-compose up --build
 ```
-
-## 🛠️ Usage
-
-### Basic Agent Creation
-```python
-from agno.agent import Agent
-
-# Create a new agent
-agent = Agent(name="my_agent")
-agent.run()
-```
-
-### API Endpoints
-- `POST v1/answer` - Answer a question
-
-## 🏗️ Architecture
-
-The project follows a modular architecture:
-- `src/agents/` - Core agent implementations
-- `src/tools/` - Reusable tools for agents
-- `src/tasks/` - Task management system
-- `src/models/` - Data models and schemas
-- `api/` - REST API implementation
-- `config/` - Configuration files
 
 ## 🤝 Contributing
 
@@ -92,8 +81,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Thanks to [agno](https://github.com/agno-agi/agno) for the incridle framework
-- Inspired by the need for fast and scalable agent implementations and deployment
+- Thanks to [agno](https://github.com/agno-agi/agno) for the incredible framework
+- Built with [DeepFace](https://github.com/serengil/deepface), [Whisper](https://github.com/openai/whisper), and [HuggingFace](https://huggingface.co/) models
 
 ## 📞 Contact
 

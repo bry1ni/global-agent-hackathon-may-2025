@@ -1,7 +1,7 @@
 from agno.models.openai import OpenAIChat
 
 gpt = OpenAIChat(
-	id="gpt-4o",
+	id="gpt-4o", # for multimodal input
 	temperature=0.4,
 )
 
